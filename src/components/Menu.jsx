@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 
 
 
@@ -14,8 +15,8 @@ export default class Menu extends Component {
 
         <div className="hidden sm:block sm:ml-6">
           <ul className="flex space-x-4 text-gray-700 font-medium items-center">
-            <li><a href="/" className="hover:text-blue-600 px-3 py-2 rounded-md text-sm">Home</a></li>
-            <li><a href="/our-story" className="hover:text-blue-600 px-3 py-2 rounded-md text-sm">Our Story</a></li>
+            <li><NavLink to="/" className="hover:text-blue-600 px-3 py-2 rounded-md text-sm">Home</NavLink></li>
+            <li><NavLink to="/our-story" className="hover:text-blue-600 px-3 py-2 rounded-md text-sm">Our Story</NavLink></li>
        
 
             <li className="relative group">
@@ -35,7 +36,7 @@ export default class Menu extends Component {
                 <li><a href="#" className="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600">Patient Guidelines</a></li>
                 <li><a href="#" className="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600">Testimonials</a></li>
                 <li><a href="#" className="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600">FAQs</a></li>
-              </ul>
+              </ul> 
             </li>
           </ul>
         </div>
@@ -91,8 +92,7 @@ export default class Menu extends Component {
           </div>
         </div>
 
-        <a href="#"
-          className="block px-3 py-2 text-blue-600 font-semibold rounded-md text-base font-medium">Book Now</a>
+      
       </div>
     </div>
   </nav>
