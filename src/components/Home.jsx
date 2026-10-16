@@ -103,14 +103,21 @@ export default class Home extends Component {
                           <img src={coche.imagen} alt="Imagen del coche" className="h-16 w-16 object-cover" />
                         </td>
 
-                        <td><NavLink to={"/update/" + coche.idCoche + "/" + coche.marca + "/" + coche.modelo + "/" + coche.conductor +"/"+coche.imagen} className="text-blue-500 hover:text-blue-700">Update</NavLink></td>
+                        <td className="px-6 py-4">
+                          <NavLink
+                            to={`/update/${coche.idCoche}`}
+                            className="font-semibold text-blue-600 hover:text-blue-800"
+                          >
+                            Actualizar
+                          </NavLink>
+                        </td>
                         
                       </tr>
                     ))
                   ) : (
                     <tr>
                       <td
-                        colSpan="3"
+                        colSpan="6"
                         className="px-6 py-12 text-center text-sm text-slate-500"
                       >
                         No hay coches disponibles.

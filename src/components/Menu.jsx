@@ -16,7 +16,7 @@ export default class Menu extends Component {
         <div className="hidden sm:block sm:ml-6">
           <ul className="flex space-x-4 text-gray-700 font-medium items-center">
             <li><NavLink to="/" className="hover:text-blue-600 px-3 py-2 rounded-md text-sm">Home</NavLink></li>
-            <li><NavLink to="/our-story" className="hover:text-blue-600 px-3 py-2 rounded-md text-sm">Our Story</NavLink></li>
+            <li><NavLink to="/create" className="hover:text-blue-600 px-3 py-2 rounded-md text-sm">Create</NavLink></li>
        
 
             <li className="relative group">
