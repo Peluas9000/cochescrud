@@ -29,4 +29,15 @@ export default class ServiceCoches {
         })
     }
 
+    eliminarCoche(id){
+        return new Promise(function(resolve){
+            let url=Global.urlCoches;
+            let request="api/Coches/DeleteCoche/"+id;
+            axios.delete(url+request).then(response=>{
+                resolve(response.data);
+            })
+        
+        })
+
+    }
 }

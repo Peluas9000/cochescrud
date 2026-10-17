@@ -4,11 +4,17 @@ import Menu from './Menu'
 import Home from './Home'
 import Update from './Update'
 import Create from './Create'
+import Delete from './Delete'
 export default class Router extends Component {
   render() {
       function UpdateElement(){
         let { id} = useParams();
         return <Update id={id}/>
+      }
+      function DeleteElement(){
+        let {id}=useParams();
+        return <Delete id={id}/>
+      
       }
 
     return (
@@ -19,6 +25,7 @@ export default class Router extends Component {
             <Route path="/" element={<Home/>}/> 
             <Route path="/update/:id" element={<UpdateElement/>}/>
             <Route path="/create" element={<Create/>}/>
+            <Route path="/delete/:id" element ={<DeleteElement/>}/>
         </Routes>
       </BrowserRouter>
     

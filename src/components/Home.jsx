@@ -94,7 +94,10 @@ export default class Home extends Component {
                     <th scope="col" className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-slate-500">
                       Detalles
                     </th>
-
+                    <th scope="col" className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-slate-500">
+                      Eliminar
+                    </th>
+                                    
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
@@ -128,7 +131,16 @@ export default class Home extends Component {
                            <button onClick={() => this.llamadaDetalles(coche)} className="font-semibold text-blue-600 hover:text-blue-800">
                             Detalles
                            </button>
+                        </td> 
+                        <td className="px-6 py-4">
+                          <NavLink
+                            to={"/delete"+"/"+coche.idCoche}
+                            className="font-semibold text-blue-600 hover:text-blue-800"
+                          >
+                            Eliminar
+                          </NavLink>
                         </td>
+
 
                         
                       </tr>
