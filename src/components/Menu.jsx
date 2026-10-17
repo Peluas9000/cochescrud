@@ -61,40 +61,7 @@ export default class Menu extends Component {
     </div>
 
     
-    <div className="sm:hidden hidden" id="mobile-menu">
-      <div className="px-2 pt-2 pb-3 space-y-1">
-        <a href="#" className="block px-3 py-2 text-gray-900 rounded-md hover:bg-gray-100 text-base font-medium">Home</a>
-        <a href="#" className="block px-3 py-2 text-gray-900 rounded-md hover:bg-gray-100 text-base font-medium">Our
-          Story</a>
-        <a href="#" className="block px-3 py-2 text-gray-900 rounded-md hover:bg-gray-100 text-base font-medium">Departments</a>
-        <a href="#"
-          className="block px-3 py-2 text-gray-900 rounded-md hover:bg-gray-100 text-base font-medium">Health
-          Packages</a>
-        <a href="#" className="block px-3 py-2 text-gray-900 rounded-md hover:bg-gray-100 text-base font-medium">Doctors</a>
-        <a href="#" className="block px-3 py-2 text-gray-900 rounded-md hover:bg-gray-100 text-base font-medium">Careers</a>
-
-
-        <div className="relative">
-          <button
-            className="w-full text-left px-3 py-2 text-gray-900 rounded-md hover:bg-gray-100 text-base font-medium flex items-center justify-between mobile-dropdown-trigger">
-            More Info
-            <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clip-rule="evenodd" />
-            </svg>
-          </button>
-          <div className="hidden pl-4 py-2 mobile-dropdown-content">
-            <a href="#" className="block py-1 hover:text-blue-600">Insurance Partners</a>
-            <a href="#" className="block py-1 hover:text-blue-600">Patient Guidelines</a>
-            <a href="#" className="block py-1 hover:text-blue-600">Testimonials</a>
-            <a href="#" className="block py-1 hover:text-blue-600">FAQs</a>
-          </div>
-        </div>
-
-      
-      </div>
-    </div>
+    
   </nav>
 
     )

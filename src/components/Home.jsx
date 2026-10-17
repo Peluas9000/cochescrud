@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import ServiceCoches from '../services/ServiceCoches';
 import { NavLink } from 'react-router-dom';
+import Detalles from './Detalles';
 
 export default class Home extends Component {
 
     servicio=new ServiceCoches();
     state={
-      coches:[]
+      coches:[],
+      cocheSelected:null
+          
     }
 
     loadCoches=()=>{
@@ -18,11 +21,31 @@ export default class Home extends Component {
       
     }
 
+    llamadaDetalles(coche){
+      
+      // Lógica para llamar a los detalles del coche
+      // Por ejemplo, puedes navegar a la página de detalles
+      this.setState({
+        cocheSelected:coche
+      });
+
+    }
+
+    cerrarDetalles=()=>{
+      this.setState({
+        cocheSelected:null
+      });
+    }
+    
+
     componentDidMount=()=>{
       this.loadCoches();
     }
     
   render() {
+    if(this.state.cocheSelected!=null){
+      return (<Detalles objeto={this.state.cocheSelected} volver={this.cerrarDetalles} />);
+    }
     return (
       <main className="min-h-screen bg-slate-50 px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
@@ -61,23 +84,17 @@ export default class Home extends Component {
                     >
                       Modelo
                     </th>
-                    <th
-                      scope="col"
-                      className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-slate-500"
-                    >
-                      Conductor
-                    </th>
-                    <th scope="col"
-                      className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-slate-500"
-                    >  
-                      Imagen
-                    </th>
+                    
                     <th
                       scope="col"
                       className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-slate-500"
                     >
                       Acciones
                     </th>
+                    <th scope="col" className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-slate-500">
+                      Detalles
+                    </th>
+
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
@@ -96,12 +113,7 @@ export default class Home extends Component {
                         <td className="whitespace-nowrap px-6 py-4 text-sm text-slate-600">
                           {coche.modelo}
                         </td>
-                        <td className="whitespace-nowrap px-6 py-4 text-sm text-slate-600">
-                          {coche.conductor}
-                        </td>
-                        <td className="whitespace-nowrap px-6 py-4 text-sm text-slate-600">
-                          <img src={coche.imagen} alt="Imagen del coche" className="h-16 w-16 object-cover" />
-                        </td>
+                        
 
                         <td className="px-6 py-4">
                           <NavLink
@@ -111,6 +123,13 @@ export default class Home extends Component {
                             Actualizar
                           </NavLink>
                         </td>
+                        
+                        <td className="px-6 py-4 ">
+                           <button onClick={() => this.llamadaDetalles(coche)} className="font-semibold text-blue-600 hover:text-blue-800">
+                            Detalles
+                           </button>
+                        </td>
+
                         
                       </tr>
                     ))
