@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ServiceCoches from '../services/ServiceCoches';
+import { Navigate } from 'react-router-dom';
 export default class Create extends Component {
 
 
@@ -42,6 +43,9 @@ export default class Create extends Component {
 
 
   render() {
+    if(this.state.status==true){
+        return <Navigate to="/"/>
+    }else{
     return (
       <div>
             <h1 className="text-2xl font-bold">Crear coche</h1>
@@ -73,5 +77,6 @@ export default class Create extends Component {
             
       </div>
     )
+}
   }
 }
