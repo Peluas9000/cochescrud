@@ -18,5 +18,15 @@ export default class ServiceCoches {
         return axios.put(`${Global.urlCoches}api/Coches/UpdateCoche`, coche)
             .then(response => response.data);
     }
+    createCoche(coche){
+        return new Promise(function(resolve){
+            let url=Global.urlCoches
+            let request="api/Coches/InsertCoche"
+            axios.post(url+request,coche).then(response=>{
+                resolve(response.data);
+
+            })
+        })
+    }
 
 }
